@@ -1,34 +1,24 @@
-# BidScout 业务线
+# Business-Unit-for-BidScout
 
-招投标/商机发现相关业务资产。
+BidScout business unit organization.
+
+## Standard Repositories
+
+- [`requirements`](https://github.com/Business-Unit-for-BidScout/requirements): product/business requirements, scope, workflows, acceptance criteria, and open questions.
+- [`deploy`](https://github.com/Business-Unit-for-BidScout/deploy): deployment orchestration, domains, CI/CD release notes, environment mapping, and operations docs.
+- [`.github`](https://github.com/Business-Unit-for-BidScout/.github): organization profile and repository map.
 
 ## Repository Map
 
-| Repository | Visibility | Purpose |
-|---|---:|---|
-| [`BidScout`](https://github.com/Business-Unit-for-BidScout/BidScout) | private | BidScout 招投标/商机发现业务仓库。 |
-| [`.github`](https://github.com/Business-Unit-for-BidScout/.github) | public | 组织 profile 和仓库地图。 |
+Current repositories should keep this split:
 
-## Scope
-
-适合放在本组织：
-
-- 招投标信息发现、线索筛选、商机分析和相关业务系统。
-- BidScout 相关需求、数据处理、前后端和部署资产。
-
-不适合放在本组织：
-
-- Enterprise Service 的客户门户和服务交付资产，除非后续明确合并。
-- 通用数据治理/RAG/BI 能力，这些归 Data Intelligence。
+- Business application repositories own source code, tests, builds, and development docs.
+- `requirements` owns durable product/business requirements.
+- `deploy` owns deployment and operations workflows.
+- `.github` owns organization-level profile and repository map.
 
 ## Governance
 
-- 具体业务代码、部署、需求和数据资产留在本业务组织。
-- 跨 BU 的战略、组合、制度和决策进入 `President-Office`。
-- 通用工程底座、RuoYi/Yudao clone/codegen 能力进入 `Business-Unit-for-Platform`。
-- AI 平台产品和 AI infra 子域进入 `Business-Unit-for-AI-Platform`。
-- 生产部署默认按多机模式设计，数据库/缓存不以 `127.0.0.1` 作为生产默认。
-
----
-
-_Last updated: 2026-07-01_
+- Keep development and deployment separate.
+- Use GitHub Actions/CI for deployment workflows; store credentials in GitHub Actions secrets.
+- Do not commit tokens, passwords, SSH keys, customer private data, or server credentials.
