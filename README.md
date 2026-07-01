@@ -1,5 +1,6 @@
-# Business-Unit-for-BidScout organization profile
+# Business-Unit-for-BidScout `.github`
 
-This repository stores the GitHub organization profile and repository map.
+Organization profile and repository map for `Business-Unit-for-BidScout`.
 
-Main profile: [`profile/README.md`](profile/README.md)
+- `profile/README.md`: GitHub organization profile.
+- Keep `requirements` and `deploy` as standard entry points.
